@@ -69,17 +69,17 @@ const Hero = () => {
 
       <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
-          <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-richBlack border border-white/10 rounded-xl p-6 w-full max-w-md">
+          <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-md" />
+          <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-richBlack/95 border border-white/20 rounded-xl p-6 w-full max-w-md shadow-xl">
             <div className="flex justify-between items-center mb-4">
               <Dialog.Title className="text-xl font-bold text-white">Request an Invite</Dialog.Title>
-              <Dialog.Close className="text-gray-400 hover:text-white">
+              <Dialog.Close className="text-gray-300 hover:text-white">
                 <X size={24} />
               </Dialog.Close>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                   Name
                 </label>
                 <input
@@ -89,12 +89,12 @@ const Hero = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-2 bg-black/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold"
+                  className="w-full px-4 py-2 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
                   placeholder="Enter your name"
                 />
               </div>
               <div>
-                <label htmlFor="mobile" className="block text-sm font-medium text-gray-400 mb-1">
+                <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-1">
                   Mobile Number
                 </label>
                 <input
@@ -104,12 +104,12 @@ const Hero = () => {
                   value={formData.mobile}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-2 bg-black/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold"
+                  className="w-full px-4 py-2 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
                   placeholder="Enter your mobile number"
                 />
               </div>
               <div>
-                <label htmlFor="feedback" className="block text-sm font-medium text-gray-400 mb-1">
+                <label htmlFor="feedback" className="block text-sm font-medium text-gray-300 mb-1">
                   Feedback
                 </label>
                 <textarea
@@ -117,7 +117,7 @@ const Hero = () => {
                   name="feedback"
                   value={formData.feedback}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-black/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold h-24 resize-none"
+                  className="w-full px-4 py-2 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gold h-24 resize-none"
                   placeholder="Share your thoughts with us"
                 />
               </div>
