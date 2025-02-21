@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Dialog } from '@radix-ui/react-dialog';
+import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { useToast } from "../hooks/use-toast";
 
@@ -67,15 +67,15 @@ const Hero = () => {
         </div>
       </div>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
           <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-richBlack border border-white/10 rounded-xl p-6 w-full max-w-md">
             <div className="flex justify-between items-center mb-4">
               <Dialog.Title className="text-xl font-bold text-white">Request an Invite</Dialog.Title>
-              <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white">
+              <Dialog.Close className="text-gray-400 hover:text-white">
                 <X size={24} />
-              </button>
+              </Dialog.Close>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -130,7 +130,7 @@ const Hero = () => {
             </form>
           </Dialog.Content>
         </Dialog.Portal>
-      </Dialog>
+      </Dialog.Root>
     </div>
   );
 };
