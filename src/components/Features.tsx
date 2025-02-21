@@ -27,16 +27,16 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="section-padding bg-white">
+    <section id="features" className="section-padding bg-black/50">
       <div className="container mx-auto">
         <div className="text-center mb-16 fade-in">
-          <span className="inline-block px-4 py-1 bg-gold/10 text-gold rounded-full text-sm font-medium font-inter mb-4">
+          <span className="inline-block px-4 py-1 bg-gold/20 text-gold rounded-full text-sm font-medium font-inter mb-4">
             Why Choose Us
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-richBlack mb-6 font-inter">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-inter">
             Comprehensive Wealth Management Solutions
           </h2>
-          <p className="text-richBlack/70 max-w-2xl mx-auto font-readex">
+          <p className="text-gray-400 max-w-2xl mx-auto font-readex">
             We offer a complete suite of wealth management services designed to help you achieve your financial goals.
           </p>
         </div>
@@ -48,8 +48,8 @@ const Features = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-richBlack font-inter">{feature.title}</h3>
-              <p className="text-richBlack/70 font-readex">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-white font-inter">{feature.title}</h3>
+              <p className="text-gray-400 font-readex">{feature.description}</p>
             </div>
           ))}
         </div>
