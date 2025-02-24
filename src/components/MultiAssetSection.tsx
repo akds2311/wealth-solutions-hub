@@ -32,27 +32,31 @@ const MultiAssetSection = () => {
   return (
     <section className="py-24 px-4 bg-black">
       <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-inter">
-            Multi-Asset Management
-          </h2>
-          <div className="space-y-6 mb-12">
-            <p className="text-lg text-gray-300 leading-relaxed font-readex">
-              Effectively distributing your income involves more than just debt management.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed font-readex">
-              Our State of the art algorithms backed with AI, not only just help you invest, they help you grow at your own pace using tailored personalized portfolio across assets like fixed deposits, gold, stocks, mutual funds, cryptocurrencies, and real estate ensuring financial stability.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed font-readex">
-              So that you achieve greater returns while living a much greater life!!
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
+          {/* Left Content */}
+          <div className="fade-in space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-inter">
+              Multi-Asset Management
+            </h2>
+            <div className="space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed font-readex">
+                Effectively distributing your income involves more than just debt management.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed font-readex">
+                Our State of the art algorithms backed with AI, not only just help you invest, they help you grow at your own pace using tailored personalized portfolio across assets like fixed deposits, gold, stocks, mutual funds, cryptocurrencies, and real estate ensuring financial stability.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed font-readex">
+                So that you achieve greater returns while living a much greater life!!
+              </p>
+            </div>
           </div>
 
-          <div className="card-gradient rounded-xl border border-purple-500/30 p-8 overflow-x-auto">
+          {/* Right Table */}
+          <div className="card-gradient rounded-xl border border-purple-500/30 p-8 overflow-x-auto fade-in">
             <h3 className="text-xl font-semibold text-white mb-6 font-inter">
               Optimization Comparison
             </h3>
-            <table className="w-full min-w-[600px]">
+            <table className="w-full min-w-[500px]">
               <thead>
                 <tr className="border-b border-purple-500/30">
                   <th className="text-left py-3 px-4 text-purple-200 font-medium">Type & Rate</th>
