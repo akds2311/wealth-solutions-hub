@@ -11,7 +11,7 @@ const DebtTrackingSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#1A1F2C]">
+    <section className="py-20 px-4 bg-black">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -23,14 +23,14 @@ const DebtTrackingSection = () => {
               Keeping tabs on all your debts and EMIs is crucial. Prioritizing high-interest debts can prevent financial strain. For instance, focusing on debts with interest rates higher than 7% can be beneficial.
             </p>
             <div className="mt-8">
-              <button className="px-6 py-3 bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition-all duration-200 font-inter">
+              <button className="px-6 py-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-all duration-200 font-inter">
                 Start Tracking Now
               </button>
             </div>
           </div>
 
           {/* Right Graph */}
-          <div className="h-[400px] bg-[#221F26] p-6 rounded-xl border border-purple-400/20 fade-in">
+          <div className="h-[400px] bg-black/50 p-6 rounded-xl border border-purple-500/30 fade-in card-gradient">
             <h3 className="text-xl font-semibold text-white mb-4 font-inter">
               Investment Growth (90 Days)
             </h3>
@@ -49,15 +49,15 @@ const DebtTrackingSection = () => {
                 />
                 <Tooltip 
                   contentStyle={{ 
-                    backgroundColor: '#221F26', 
-                    border: '1px solid rgba(139, 92, 246, 0.2)',
+                    backgroundColor: 'rgba(0,0,0,0.9)', 
+                    border: '1px solid rgba(147, 51, 234, 0.3)',
                     color: '#fff'
                   }}
                   formatter={(value) => [`₹${value.toLocaleString()}`, 'Amount']}
                 />
                 <Bar 
                   dataKey="amount" 
-                  fill="#8B5CF6" 
+                  fill="#9333EA" 
                   radius={[4, 4, 0, 0]}
                 />
               </BarChart>
