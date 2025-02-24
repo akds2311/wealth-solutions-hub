@@ -30,10 +30,10 @@ const MultiAssetSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-black">
+    <section className="py-24 px-4 bg-black">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-inter">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-inter">
             Multi-Asset Management
           </h2>
           <div className="space-y-6 mb-12">
@@ -48,7 +48,7 @@ const MultiAssetSection = () => {
             </p>
           </div>
 
-          <div className="card-gradient rounded-xl border border-purple-500/30 p-6 overflow-x-auto">
+          <div className="card-gradient rounded-xl border border-purple-500/30 p-8 overflow-x-auto">
             <h3 className="text-xl font-semibold text-white mb-6 font-inter">
               Optimization Comparison
             </h3>
