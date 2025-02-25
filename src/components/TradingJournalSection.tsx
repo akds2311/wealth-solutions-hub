@@ -17,7 +17,7 @@ const TradingJournalSection = () => {
             points.forEach((point, index) => {
               setTimeout(() => {
                 (point as HTMLElement).classList.add('animate-point');
-              }, 500 + index * 400);
+              }, 800 + index * 800); // Slower animation timing
             });
           }
         });
@@ -78,50 +78,36 @@ const TradingJournalSection = () => {
 
           <div 
             ref={timelineRef} 
-            className="relative h-[400px] opacity-0 transition-opacity duration-1000"
+            className="relative h-[500px] opacity-0 transition-opacity duration-1000"
             style={{ opacity: 0 }}
           >
-            {/* Main Timeline Line */}
-            <div className="absolute top-1/2 left-0 w-0 h-[4px] bg-gradient-to-r from-purple-400 to-purple-800 timeline-line"></div>
+            {/* Main Capsule Timeline */}
+            <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-16 bg-gray-800/60 rounded-full overflow-hidden">
+              {/* Animated Fill */}
+              <div className="absolute top-0 left-0 h-full w-0 timeline-line bg-gradient-to-r from-purple-800 via-purple-600 to-purple-500 rounded-full"></div>
+            </div>
 
             {/* Timeline Points */}
             {timelinePoints.map((point, index) => (
               <div 
                 key={index}
-                className={`timeline-point opacity-0 absolute transition-opacity duration-500 ease-in-out`}
+                className={`timeline-point opacity-0 absolute transition-opacity duration-700 ease-in-out z-10`}
                 style={{ 
                   left: `${point.position}%`, 
-                  top: point.side === "top" ? "30%" : "70%",
-                  transform: 'translateX(-50%)',
-                  maxWidth: '250px',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
                   opacity: 0
                 }}
               >
-                {/* Vertical Line to Main Timeline */}
-                <div 
-                  className="absolute w-[2px] bg-purple-500"
-                  style={{ 
-                    top: point.side === "top" ? "100%" : "auto",
-                    bottom: point.side === "bottom" ? "100%" : "auto", 
-                    left: "50%", 
-                    height: "80px",
-                    transform: "translateX(-50%)"
-                  }}
-                ></div>
-
-                {/* Point Indicator */}
-                <div 
-                  className="absolute w-4 h-4 bg-purple-600 rounded-full shadow-glow"
-                  style={{ 
-                    top: point.side === "top" ? "calc(100% + 80px)" : "auto",
-                    bottom: point.side === "bottom" ? "calc(100% + 80px)" : "auto", 
-                    left: "50%", 
-                    transform: "translate(-50%, -50%)"
-                  }}
-                ></div>
+                {/* Glowing Point Indicator */}
+                <div className="w-8 h-8 bg-purple-700 rounded-full flex items-center justify-center shadow-glow">
+                  <div className="w-4 h-4 bg-purple-300 rounded-full timeline-point-inner"></div>
+                </div>
 
                 {/* Text Box */}
-                <div className={`card-gradient p-4 rounded-lg border border-purple-500/30 text-sm text-white shadow-xl ${index === 0 || index === timelinePoints.length - 1 ? 'font-bold text-lg' : ''}`}>
+                <div 
+                  className={`card-gradient p-4 rounded-lg border border-purple-500/30 text-sm text-white shadow-xl absolute ${point.side === "top" ? "-top-32" : "top-12"} left-1/2 -translate-x-1/2 w-64`}
+                >
                   {point.text}
                 </div>
               </div>
