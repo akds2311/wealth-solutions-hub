@@ -82,7 +82,7 @@ const TradingJournalSection = () => {
             style={{ opacity: 0 }}
           >
             {/* Main Capsule Timeline */}
-            <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-16 bg-gray-800/60 rounded-full overflow-hidden">
+            <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-8 bg-gray-800/60 rounded-full overflow-hidden">
               {/* Animated Fill */}
               <div className="absolute top-0 left-0 h-full w-0 timeline-line bg-gradient-to-r from-purple-800 via-purple-600 to-purple-500 rounded-full"></div>
             </div>
@@ -99,6 +99,16 @@ const TradingJournalSection = () => {
                   opacity: 0
                 }}
               >
+                {/* Vertical Line to Text */}
+                <div 
+                  className={`absolute w-[2px] bg-purple-600/50 transition-all duration-700 ${point.side === "top" ? "-top-[60px]" : "top-[32px]"}`}
+                  style={{ 
+                    left: "50%", 
+                    transform: "translateX(-50%)",
+                    height: point.side === "top" ? "60px" : "60px"
+                  }}
+                ></div>
+
                 {/* Glowing Point Indicator */}
                 <div className="w-8 h-8 bg-purple-700 rounded-full flex items-center justify-center shadow-glow">
                   <div className="w-4 h-4 bg-purple-300 rounded-full timeline-point-inner"></div>
@@ -106,7 +116,7 @@ const TradingJournalSection = () => {
 
                 {/* Text Box */}
                 <div 
-                  className={`card-gradient p-4 rounded-lg border border-purple-500/30 text-sm text-white shadow-xl absolute ${point.side === "top" ? "-top-32" : "top-12"} left-1/2 -translate-x-1/2 w-64`}
+                  className={`card-gradient p-4 rounded-lg border border-purple-500/30 text-sm text-white shadow-xl absolute ${point.side === "top" ? "-top-[120px]" : "top-[92px]"} left-1/2 -translate-x-1/2 w-64`}
                 >
                   {point.text}
                 </div>
