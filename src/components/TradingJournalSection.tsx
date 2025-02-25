@@ -17,7 +17,7 @@ const TradingJournalSection = () => {
             points.forEach((point, index) => {
               setTimeout(() => {
                 (point as HTMLElement).classList.add('animate-point');
-              }, 500 + index * 400);
+              }, 800 + index * 600); // Slowed down the animation timing
             });
           }
         });
@@ -116,7 +116,7 @@ const TradingJournalSection = () => {
                     top: point.side === "top" ? "calc(100% + 100px)" : "auto",
                     bottom: point.side === "bottom" ? "calc(100% + 100px)" : "auto", 
                     left: "50%", 
-                    transform: "translate(-50%, -50%)"
+                    transform: "translateX(-50%, -50%)"
                   }}
                 >
                   {/* Inner glow effect */}

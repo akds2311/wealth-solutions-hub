@@ -68,7 +68,7 @@
 /* Timeline Animation Styles */
 .timeline-line {
   width: 0;
-  transition: width 1.5s ease-in-out;
+  transition: width 2.5s ease-in-out; /* Slowed down from 1.5s to 2.5s */
 }
 
 .animate-timeline {
