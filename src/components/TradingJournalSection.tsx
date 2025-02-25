@@ -78,11 +78,11 @@ const TradingJournalSection = () => {
 
           <div 
             ref={timelineRef} 
-            className="relative h-[400px] opacity-0 transition-opacity duration-1000"
+            className="relative h-[550px] opacity-0 transition-opacity duration-1000"
             style={{ opacity: 0 }}
           >
             {/* Main Timeline Line */}
-            <div className="absolute top-1/2 left-0 w-0 h-[4px] bg-gradient-to-r from-purple-400 to-purple-800 timeline-line"></div>
+            <div className="absolute top-1/2 left-0 w-0 h-[8px] bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 timeline-line rounded-full"></div>
 
             {/* Timeline Points */}
             {timelinePoints.map((point, index) => (
@@ -91,7 +91,7 @@ const TradingJournalSection = () => {
                 className={`timeline-point opacity-0 absolute transition-opacity duration-500 ease-in-out`}
                 style={{ 
                   left: `${point.position}%`, 
-                  top: point.side === "top" ? "30%" : "70%",
+                  top: point.side === "top" ? "20%" : "80%",
                   transform: 'translateX(-50%)',
                   maxWidth: '250px',
                   opacity: 0
@@ -99,26 +99,29 @@ const TradingJournalSection = () => {
               >
                 {/* Vertical Line to Main Timeline */}
                 <div 
-                  className="absolute w-[2px] bg-purple-500"
+                  className="absolute w-[2px] bg-gradient-to-b from-purple-400 to-purple-600"
                   style={{ 
                     top: point.side === "top" ? "100%" : "auto",
                     bottom: point.side === "bottom" ? "100%" : "auto", 
                     left: "50%", 
-                    height: "80px",
+                    height: "100px",
                     transform: "translateX(-50%)"
                   }}
                 ></div>
 
                 {/* Point Indicator */}
                 <div 
-                  className="absolute w-4 h-4 bg-purple-600 rounded-full shadow-glow"
+                  className="absolute w-6 h-6 bg-purple-600 rounded-full shadow-glow z-10"
                   style={{ 
-                    top: point.side === "top" ? "calc(100% + 80px)" : "auto",
-                    bottom: point.side === "bottom" ? "calc(100% + 80px)" : "auto", 
+                    top: point.side === "top" ? "calc(100% + 100px)" : "auto",
+                    bottom: point.side === "bottom" ? "calc(100% + 100px)" : "auto", 
                     left: "50%", 
                     transform: "translate(-50%, -50%)"
                   }}
-                ></div>
+                >
+                  {/* Inner glow effect */}
+                  <div className="absolute inset-1 bg-purple-300 rounded-full opacity-70 animate-ping"></div>
+                </div>
 
                 {/* Text Box */}
                 <div className={`card-gradient p-4 rounded-lg border border-purple-500/30 text-sm text-white shadow-xl ${index === 0 || index === timelinePoints.length - 1 ? 'font-bold text-lg' : ''}`}>
