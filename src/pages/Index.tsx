@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { Toaster } from "../components/ui/toaster";
 import DebtTrackingSection from '../components/DebtTrackingSection';
 import MultiAssetSection from '../components/MultiAssetSection';
+import TradingJournalSection from '../components/TradingJournalSection';
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Hero />
       <DebtTrackingSection />
       <MultiAssetSection />
+      <TradingJournalSection />
       <Footer />
       <Toaster />
     </div>

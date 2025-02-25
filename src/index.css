@@ -64,3 +64,38 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
 }
+
+/* Timeline Animation Styles */
+.timeline-line {
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+.animate-timeline {
+  opacity: 1 !important;
+}
+
+.animate-timeline .timeline-line {
+  width: 100%;
+}
+
+.animate-point {
+  opacity: 1 !important;
+  animation: pointPulse 2s infinite;
+}
+
+@keyframes pointPulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+}
